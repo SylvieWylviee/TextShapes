@@ -41,7 +41,24 @@ void PrintTextHalfEllipse(const double radius,const double semiMajorAxis,const d
 }
 
 int main(){
-	PrintTextTriangle(10,10);
-	PrintTextHalfEllipse(10,1,1);
-	return 0;
+	int textShape;
+	double height,width,
+		radius,semiMajorAxis,semiMinorAxis;
+	
+	std::cout<<"0: Text triangle\n1: Text half-ellipse\n";
+	std::cin>>textShape;
+	
+	switch(textShape){
+		case 0:
+			default:
+				std::cout<<"\nEnter height and width: ";
+				std::cin>>height>>width;
+				PrintTextTriangle(height,width);
+				break;
+		case 1:
+			std::cout<<"\nEnter radius, semi-major axis, and semi-minor axis: ";
+			std::cin>>radius>>semiMajorAxis>>semiMinorAxis;
+			PrintTextHalfEllipse(radius,semiMajorAxis,semiMinorAxis);
+			break;
+	}return 0;
 }
